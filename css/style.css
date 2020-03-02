@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 *{
-    padding: 10px;
+    padding: 0px;
+    margin: 0px;
     box-sizing: border-box;
     font-family: 'Montserrat', ;
 }
@@ -11,6 +12,9 @@ a{
     display: flex;
     flex-flow: column nowrap;
 }
+.margen-interno{
+    padding: 0 50px;
+}
 /* header */
 header{
     background:url(../images/header.jpg);
@@ -19,6 +23,7 @@ header{
     background-size: cover;
     display: flex;
     flex-flow: column nowrap;
+    min-height: 100vh;
 }
     .menu{
         background: rgb(0,0,0, .1);
@@ -70,37 +75,101 @@ header{
             }
 
     .texto-principal{
-        background: #f07b3f;
+        height: 580px;
+        display: flex;
+        align-items: center;
     }
         h1{
-            background: #ffd460;
+            color: #fff;
+            font-weight: 300;
+            text-align: center;
+            line-height: 1.6;
+
         }
 /* section */
 section{
-    background: #000;
+    background: #f7f7f7;
     display: flex;
 }
     .articulos{
-        background: #4f3961;
-        flex: 2 1 auto;
+        background: #f7f7f7;
+        flex: 1 1 auto;
         display: flex;
         flex-flow: row wrap;
     }
         .articulo{
-            background: #ea728c;
+            color: #444;
             flex: 1 1 40%;
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin: 10px 10px 0 0px;
+            background: #ececec;
             
         }
+        .articulo img{
+            width: 100%;
+        }
+        .articulos a{
+        background-color: #000;
+        padding: 10px;
+        color: #fff;
+        font-size: 13px;
+        margin: 5px;
+        display: inline-block;
+        }
+        .articulos a:hover{
+            background: #546cc3;
+        }
+        .articulo p{
+            padding: 5px;
+            text-align: justify;
+        }
+        h3{
+            font-size: 13px;
+            color: #fff;
+            
+            margin-top: -60px;
+            padding: 5px;
+            
+
+        }
+        h2{
+            font-size: 20px;
+            text-transform: uppercase;
+            padding: 5px;
+            color: #fff;
+
+        }
         .navegacion{
-            background: #fc9d9d;
+            background: #000;
             flex: 1 1 100%;
+            font-size: 11px;
+            text-transform: uppercase;
+            padding: 0 10px;
+            letter-spacing: 2px;
+            margin: 10px 10px 0 0px;
         }
     aside{
-        background: #d45079;
-        flex: 1 1 auto;
+        margin: 10px 10px 0 0px;
+        display: flex;
+        background: #fff;
+        flex: 1 1 100%;
+        flex-direction: column;
     }
+    aside  img{
+        width: 100%;
+    }
+
         .publicidad{
-            background: #feb72b;
+            min-width: 250px;
+            
+        }
+        .publicidad h4{
+            background: black;
+            color: #fff;
+            padding: 10px;
+            text-transform: uppercase;
+            
         }
 
 /* footer         */
@@ -108,17 +177,33 @@ footer{
     background: #000;
     display: flex; 
     justify-content: center;
+    margin-top: 10px;
 }
     .pie{
-        background: #29c7ac;
-        width: 300px;    
+        text-align: center;
+    }
+    .pie a{
+        color: #fff;
+        font-size: 11px;
+        text-transform: uppercase;
+        padding: 0 10px;
+        letter-spacing: 2px;
     }
 
 /* responsive */
-@media all and (max-width: 800px){
+@media all and (max-width: 920px){
+
     section{
         flex-direction: column;
     }
+
+    .texto-principal{
+        height: 500px;
+    }
+    .texto-principal h1{
+        font-size: 25px;
+    }
+
     .menu{
         flex-direction: column;
         height: auto;
@@ -126,12 +211,36 @@ footer{
     aside{
         display: flex;
         justify-content: center;
+        flex-direction: row;
     }
+        .publicidad{
+            min-width: 100px;
+            
+        }
 }
 
-@media all and (max-width: 600px){
+@media all and (max-width: 650px){
     .articulos{
         flex-direction: column;
+    }
+    aside{
+        flex-direction: column;
+    }
+    .oculto{
+        display: none;
+    }
+    .nav a i{
+        font-size: 20px;
+    }
+    .texto-principal h1{
+        font-size: 20px;
+    }
+    .texto-principal{
+        height: 550px;
+    }
+
+    .articulo, .navegacion, aside{
+        margin: 10px 0px 0 0px;
     }
 }
 
@@ -139,4 +248,8 @@ footer{
     aside{
         flex-direction: column;
     }
+    .texto-principal{
+        height: 600px;
+    }
+
 }
